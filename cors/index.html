@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>cors</h1>
+</body>
+
+<script>
+    // 原生 ajax
+    var xhr = new XMLHttpRequest();//创建 XHR 对象
+    xhr.onreadystatechange = function () { 
+        if (xhr.readyState == 4) { 
+            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+                // 处理响应数据
+                console.log(xhr.responseText);
+            } else {
+                console.error("Request was unsuccessful: " + xhr.status);
+            }
+        }
+    };
+    xhr.open("get", "http://localhost:3000/say", true);
+    xhr.send(null);
+</script>
+
+</html>
