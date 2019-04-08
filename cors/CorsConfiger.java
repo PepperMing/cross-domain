@@ -11,7 +11,6 @@ public class CorsConfiger {
 		corsc.addAllowedOrigin("*");
 		corsc.addAllowedMethod("*");
 		corsc.addAllowedHeader("*");
-		corsc.addExposedHeader("*");
 		return corsc;
 	}
 	
